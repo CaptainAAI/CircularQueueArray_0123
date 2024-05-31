@@ -66,6 +66,7 @@ public:
 		// CEK APAKAH ANTRIAN KOSONG
 		if(FRONT == -1) {
 			cout << "Queue is empty\n";
+			return;
 		}
 	}
 
