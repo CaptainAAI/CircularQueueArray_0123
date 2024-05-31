@@ -26,7 +26,14 @@ public:
 			FRONT = 0;
 			REAR = 0;
 		}
-
+		else {
+			//JIKA REAR BERADA DI POSISI TERAKHIR ARRAY, KEMBALI KE AWAL ARRAY
+			if (REAR == max - 1)
+				REAR = 0;
+			else
+				REAR = REAR + 1;
+		}
+		queue_array[REAR] = num;
 
 	}
 
