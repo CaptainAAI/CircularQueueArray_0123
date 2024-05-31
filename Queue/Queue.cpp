@@ -16,7 +16,7 @@ public:
 		cin >> num;
 		cout << endl;
 		//CHECK APAKAH ANTRIAN PENUH
-		if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)); {
+		if ((FRONT == 0 && REAR == max - 1) || (FRONT == REAR + 1)) {
 			cout << "\nQueue overflow\n";
 			return;
 		}
@@ -43,18 +43,19 @@ public:
 			cout << "queue underflow\n";
 			return;
 		}
+		cout << "\nThe element deleted from the queue is: " << queue_array[FRONT] << '\n';
 		//CEK JIKA ANTRIAN HANYA MEMILIKI SATU ELEMEN
 		if (FRONT == REAR) {
 			FRONT = -1;
 			REAR = -1;
 		}
-		cout << "\nThe element deleted from the queue is: " << queue_array[FRONT] << '\n';
+		
 		else {
 			//JIKA ELEMEN YANG DIHAPUS BERADA DI POSISI TERAKHIR ARRAY, KEMBALI KE AWAL ARRAY
 			if (FRONT == max - 1)
 				FRONT = 0;
 			else
-				FRONT = FRONT + 1;
+				FRONT + 1;
 		}
 
 	}
@@ -64,7 +65,7 @@ public:
 		int REAR_position = REAR;
 
 		// CEK APAKAH ANTRIAN KOSONG
-		if(FRONT == -1) {
+		if (FRONT_position == -1) {
 			cout << "Queue is empty\n";
 			return;
 		}
@@ -74,6 +75,7 @@ public:
 		if (FRONT_position <= REAR_position) {
 			while (FRONT_position <= REAR_position) {
 				cout << queue_array[FRONT_position] << "  ";
+				FRONT_position++;
 			}
 			cout << endl;
 		}
@@ -86,9 +88,9 @@ public:
 			FRONT_position = 0;
 
 			//ITERASI DARI AWAL HINGGA REAR
-			while (FRONT_Position <= REAR_Position) {
-				cout << queue_array[FRONT_Position] << "  ";
-				FRONT_Position++;
+			while (FRONT_position <= REAR_position) {
+				cout << queue_array[FRONT_position] << "  ";
+				FRONT_position++;
 			}
 			cout << endl;
 		}
