@@ -43,6 +43,11 @@ public:
 			cout << "queue underflow\n";
 			return;
 		}
+		//CEK JIKA ANTRIAN HANYA MEMILIKI SATU ELEMEN
+		if (FRONT == REAR) {
+			FRONT = -1;
+			REAR = -1;
+		}
 		cout << "\nThe element deleted from the queue is: " << queue_array[FRONT] << '\n';
 		else {
 			//JIKA ELEMEN YANG DIHAPUS BERADA DI POSISI TERAKHIR ARRAY, KEMBALI KE AWAL ARRAY
@@ -52,6 +57,16 @@ public:
 				FRONT = FRONT + 1;
 		}
 
+	}
+
+	void display() {
+		int FRONT_position = FRONT;
+		int REAR_position = REAR;
+
+		// CEK APAKAH ANTRIAN KOSONG
+		if(FRONT == -1) {
+			cout << "Queue is empty\n";
+		}
 	}
 
 
